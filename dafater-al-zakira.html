@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دفاتر الذاكرة — مدوّنة شخصية</title>
+<meta name="description" content="دفاتر الذاكرة — يوميات، تأملات، ذكريات، وقهوة بين الكتب">
+
+<!-- ╔══════════════════════════════════════════════════════════════╗
+     ║  دفاتر الذاكرة - مدونة شخصية أدبية                            ║
+     ║  Personal Arabic Literary Blog                                ║
+     ║                                                                ║
+     ║  كلمة سر لوحة التحرير: 1980                                    ║
+     ║  Admin password: 1980  (يمكن تغييرها في الأسفل)                ║
+     ║                                                                ║
+     ║  لفتح لوحة التحرير: اضغط على الإشارة الذهبية في الزاوية         ║
+     ║  أو استخدم الاختصار:  Ctrl + Shift + A                          ║
+     ╚══════════════════════════════════════════════════════════════╝ -->
+
+<!-- خطوط عربية أنيقة من جوجل -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Reem+Kufi:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════════
+   ١. متغيرات الألوان والإعدادات العامة
+   ══════════════════════════════════════════════════════════════ */
+:root {
+    /* ألوان الورق */
+    --paper-bg:       #f3e7cf;   /* لون الورق الأساسي */
+    --paper-light:    #f8efd9;   /* ورق فاتح */
+    --paper-aged:     #e8d9b8;   /* ورق قديم */
+    --paper-shadow:   #d4c197;   /* ظلال الورق */
+    --paper-dark:     #c8b486;   /* ورق داكن */
+
+    /* ألوان البن والحبر */
+    --coffee:         #6b4423;   /* بنّي القهوة */
+    --coffee-light:   #8b6a47;   /* قهوة فاتحة */
+    --coffee-dark:    #4a2e15;   /* قهوة داكنة */
+    --espresso:       #2e1a0a;   /* إسبريسو */
+    --ink:            #2c1f10;   /* لون الحبر */
+    --ink-soft:       #4a3826;   /* حبر ناعم */
+    --ink-faded:      #6b5840;   /* حبر باهت */
+
+    /* ألوان الذهب والزخرفة */
+    --gold:           #a67c2e;   /* ذهب معتّق */
+    --gold-light:     #c19a55;   /* ذهب فاتح */
+    --gold-dark:      #7a5a1f;   /* ذهب داكن */
+
+    /* ألوان مكمّلة */
+    --forest:         #4a5d3a;   /* أخضر الغابة */
+    --forest-deep:    #2f3d24;   /* أخضر داكن */
+    --burnt:          #b85c2a;   /* برتقالي محروق */
+    --wine:           #7a2e2e;   /* عنّابي */
+
+    /* ظلال */
+    --shadow-soft:    rgba(60, 40, 20, 0.08);
+    --shadow-mid:     rgba(60, 40, 20, 0.15);
+    --shadow-deep:    rgba(40, 25, 10, 0.25);
+    --shadow-sepia:   rgba(120, 80, 40, 0.20);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٢. إعدادات أساسية
+   ══════════════════════════════════════════════════════════════ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Amiri', 'Tajawal', serif;
+    background-color: var(--paper-bg);
+    color: var(--ink);
+    line-height: 1.9;
+    font-size: 18px;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* خلفية ورق قديم - طبقة الحبيبات */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        /* بقع باهتة */
+        radial-gradient(ellipse 800px 600px at 15% 20%, rgba(166, 124, 46, 0.06), transparent 60%),
+        radial-gradient(ellipse 700px 500px at 85% 70%, rgba(107, 68, 35, 0.05), transparent 60%),
+        radial-gradient(ellipse 600px 400px at 50% 90%, rgba(74, 93, 58, 0.04), transparent 60%),
+        /* خطوط رفيعة كأنها خطوط الدفتر */
+        repeating-linear-gradient(0deg, transparent 0 39px, rgba(107, 68, 35, 0.025) 39px 40px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* طبقة الحبيبات (Grain) باستخدام SVG */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.1 0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* جعل المحتوى فوق الطبقات الزخرفية */
+.content-wrap {
+    position: relative;
+    z-index: 3;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٣. الخطوط - تصنيفات النصوص
+   ══════════════════════════════════════════════════════════════ */
+.font-display     { font-family: 'Aref Ruqaa', serif; font-weight: 700; }
+.font-heading     { font-family: 'Reem Kufi', sans-serif; font-weight: 600; }
+.font-body        { font-family: 'Amiri', serif; }
+.font-ui          { font-family: 'Tajawal', sans-serif; }
+
+/* ══════════════════════════════════════════════════════════════
+   ٤. شريط التنقل
+   ══════════════════════════════════════════════════════════════ */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    padding: 14px 32px;
+    background: rgba(243, 231, 207, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(166, 124, 46, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: padding 0.3s ease, background 0.3s ease;
+}
+.nav-bar.scrolled {
+    padding: 10px 32px;
+    background: rgba(243, 231, 207, 0.95);
+    box-shadow: 0 2px 20px var(--shadow-soft);
+}
+.nav-logo {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 24px;
+    color: var(--coffee-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+.nav-logo .logo-ornament {
+    color: var(--gold);
+    font-size: 22px;
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+.nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 4px 2px;
+    transition: color 0.25s ease;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    right: 50%;
+    bottom: -2px;
+    width: 0;
+    height: 1.5px;
+    background: var(--gold);
+    transition: width 0.3s ease, right 0.3s ease;
+}
+.nav-links a:hover {
+    color: var(--coffee-dark);
+}
+.nav-links a:hover::after {
+    width: 100%;
+    right: 0;
+}
+
+/* زر القائمة للجوال */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--coffee-light);
+    color: var(--coffee-dark);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٥. زر الإشارة المرجعية - مدخل لوحة التحرير
+   ══════════════════════════════════════════════════════════════ */
+.bookmark-trigger {
+    position: fixed;
+    top: 0;
+    left: 40px;
+    width: 36px;
+    height: 70px;
+    background: linear-gradient(180deg, var(--wine) 0%, #5a1f1f 100%);
+    z-index: 60;
+    cursor: pointer;
+    transition: transform 0.3s ease, height 0.3s ease;
+    box-shadow: 2px 4px 8px var(--shadow-mid);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    color: var(--gold-light);
+    font-size: 14px;
+}
+.bookmark-trigger:hover {
+    height: 86px;
+    transform: translateY(-2px);
+}
+.bookmark-trigger::after {
+    content: '✦';
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٦. القسم الرئيسي (Hero)
+   ══════════════════════════════════════════════════════════════ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 32px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* بقعة قهوة زخرفية */
+.coffee-stain {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 12px solid rgba(107, 68, 35, 0.13);
+    box-shadow:
+        inset 0 0 0 4px rgba(107, 68, 35, 0.06),
+        0 0 60px rgba(107, 68, 35, 0.05);
+    pointer-events: none;
+    z-index: 0;
+}
+.coffee-stain.top-right {
+    top: 12%;
+    left: 8%;
+    transform: rotate(-15deg);
+}
+.coffee-stain.bottom-left {
+    bottom: 8%;
+    right: 6%;
+    width: 180px;
+    height: 180px;
+    transform: rotate(20deg);
+    opacity: 0.7;
+}
+
+.hero-ornament-top {
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    letter-spacing: 12px;
+    opacity: 0;
+    animation: fadeInDown 1.2s ease 0.2s forwards;
+}
+
+.hero-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(48px, 9vw, 110px);
+    font-weight: 700;
+    color: var(--coffee-dark);
+    line-height: 1.1;
+    margin-bottom: 18px;
+    text-shadow: 2px 2px 0 rgba(166, 124, 46, 0.15);
+    opacity: 0;
+    animation: fadeInUp 1.4s ease 0.4s forwards;
+    position: relative;
+}
+.hero-title .ink-blot {
+    color: var(--gold);
+    font-size: 0.85em;
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 28px auto 32px;
+    max-width: 320px;
+    opacity: 0;
+    animation: fadeIn 1.4s ease 0.7s forwards;
+}
+.hero-divider .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.hero-divider .ornament {
+    color: var(--gold);
+    font-size: 22px;
+}
+
+.hero-subtitle {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.5vw, 26px);
+    color: var(--ink-soft);
+    margin-bottom: 36px;
+    max-width: 700px;
+    opacity: 0;
+    animation: fadeInUp 1.4s ease 0.7s forwards;
+}
+
+.hero-intro {
+    max-width: 680px;
+    font-size: clamp(17px, 1.6vw, 19px);
+    line-height: 2.1;
+    color: var(--ink-soft);
+    margin: 0 auto;
+    padding: 32px 36px;
+    background: rgba(248, 239, 217, 0.4);
+    border: 1px solid rgba(166, 124, 46, 0.2);
+    border-radius: 4px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 1.4s ease 1s forwards;
+}
+.hero-intro::before,
+.hero-intro::after {
+    content: '"';
+    position: absolute;
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 64px;
+    color: var(--gold);
+    opacity: 0.5;
+    line-height: 1;
+}
+.hero-intro::before {
+    top: -8px;
+    right: 16px;
+}
+.hero-intro::after {
+    bottom: -40px;
+    left: 16px;
+}
+
+.scroll-hint {
+    margin-top: 56px;
+    color: var(--coffee-light);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 1.4s ease 1.4s forwards, bob 2.5s ease-in-out 2.5s infinite;
+}
+.scroll-hint::after {
+    content: '\A↓';
+    white-space: pre;
+    display: block;
+    font-size: 20px;
+    margin-top: 4px;
+    color: var(--gold);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٧. عنوان القسم العام
+   ══════════════════════════════════════════════════════════════ */
+.section {
+    padding: 100px 32px;
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 64px;
+}
+.section-eyebrow {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.section-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    color: var(--coffee-dark);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+}
+.section-title .deco {
+    color: var(--gold);
+    margin: 0 12px;
+}
+.section-subtitle {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-faded);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٨. بطاقات المقالات
+   ══════════════════════════════════════════════════════════════ */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 36px;
+}
+.post-card {
+    background:
+        linear-gradient(135deg, var(--paper-light) 0%, var(--paper-aged) 100%);
+    padding: 32px 32px 28px;
+    border-radius: 3px;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.6) inset,
+        0 12px 28px var(--shadow-soft),
+        0 2px 6px var(--shadow-soft);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(166, 124, 46, 0.18);
+    overflow: hidden;
+}
+/* زاوية مطوية ( كأنها صفحة كتاب ) */
+.post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(225deg, var(--paper-bg) 50%, var(--paper-shadow) 50%);
+    box-shadow: -2px 2px 4px var(--shadow-soft);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+.post-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-light) 100%);
+    opacity: 0.3;
+}
+.post-card:hover {
+    transform: translateY(-6px) rotate(-0.3deg);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.6) inset,
+        0 20px 40px var(--shadow-mid),
+        0 4px 12px var(--shadow-mid);
+}
+.post-card:hover::before {
+    width: 44px;
+    height: 44px;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faded);
+    border-bottom: 1px dashed rgba(107, 68, 35, 0.3);
+    padding-bottom: 12px;
+}
+.post-category {
+    display: inline-block;
+    padding: 3px 12px;
+    background: rgba(166, 124, 46, 0.15);
+    color: var(--coffee-dark);
+    border-radius: 2px;
+    font-weight: 500;
+    border: 1px solid rgba(166, 124, 46, 0.25);
+}
+.post-date {
+    color: var(--ink-faded);
+    font-style: italic;
+}
+
+.post-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 28px;
+    color: var(--coffee-dark);
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.post-excerpt {
+    font-family: 'Amiri', serif;
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+}
+
+.post-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: var(--coffee-dark);
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    position: relative;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+.post-read::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0.4);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+.post-read:hover {
+    color: var(--burnt);
+    gap: 12px;
+}
+.post-read:hover::before {
+    transform: scaleX(1);
+}
+.post-read .arrow {
+    color: var(--gold);
+    font-size: 18px;
+}
+
+/* أزرار التحرير على البطاقة (تظهر في وضع المسؤول) */
+.card-admin-tools {
+    display: none;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    gap: 6px;
+    z-index: 5;
+}
+body.admin-mode .card-admin-tools {
+    display: flex;
+}
+.card-tool-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(107, 68, 35, 0.3);
+    background: rgba(248, 239, 217, 0.95);
+    color: var(--coffee-dark);
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.card-tool-btn:hover {
+    background: var(--gold);
+    color: var(--paper-light);
+    transform: scale(1.1);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٩. الذكريات المميزة - الخط الزمني
+   ══════════════════════════════════════════════════════════════ */
+.memories-section {
+    background:
+        linear-gradient(180deg, transparent, rgba(166, 124, 46, 0.04) 50%, transparent),
+        var(--paper-bg);
+}
+
+.timeline {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: repeating-linear-gradient(
+        180deg,
+        var(--gold) 0 8px,
+        transparent 8px 16px
+    );
+    opacity: 0.6;
+}
+
+.memory-item {
+    position: relative;
+    width: 50%;
+    padding: 24px 40px;
+    box-sizing: border-box;
+}
+.memory-item:nth-child(odd) {
+    margin-right: 50%;
+    text-align: left;
+    padding-right: 20px;
+}
+.memory-item:nth-child(even) {
+    margin-right: 0;
+    margin-left: 50%;
+    text-align: right;
+    padding-left: 20px;
+}
+
+/* نقطة على الخط الزمني */
+.memory-item::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    width: 18px;
+    height: 18px;
+    background: var(--paper-bg);
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    z-index: 2;
+}
+.memory-item:nth-child(odd)::before {
+    left: -9px;
+}
+.memory-item:nth-child(even)::before {
+    right: -9px;
+}
+
+.memory-card {
+    background: var(--paper-light);
+    border: 1px solid rgba(166, 124, 46, 0.25);
+    padding: 20px 24px;
+    border-radius: 3px;
+    box-shadow: 0 8px 20px var(--shadow-soft);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.memory-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px var(--shadow-mid);
+}
+/* شريط لاصق وهمي */
+.memory-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 60px;
+    height: 18px;
+    background: rgba(184, 92, 42, 0.25);
+    border: 1px solid rgba(184, 92, 42, 0.3);
+    transform: rotate(-3deg);
+}
+.memory-item:nth-child(odd) .memory-card::before {
+    right: 24px;
+}
+.memory-item:nth-child(even) .memory-card::before {
+    left: 24px;
+    transform: rotate(3deg);
+}
+
+.memory-image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--paper-aged), var(--paper-shadow));
+    border-radius: 2px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--coffee-light);
+    font-size: 48px;
+    overflow: hidden;
+    position: relative;
+}
+.memory-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.15) saturate(0.9);
+}
+.memory-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(60, 40, 20, 0.18) 100%);
+    pointer-events: none;
+}
+
+.memory-date {
+    font-family: 'Aref Ruqaa', serif;
+    color: var(--gold-dark);
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.memory-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 24px;
+    color: var(--coffee-dark);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+.memory-location {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faded);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+.memory-location::before {
+    content: '✦ ';
+    color: var(--gold);
+}
+.memory-description {
+    font-family: 'Amiri', serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٠. ركن الكتابة
+   ══════════════════════════════════════════════════════════════ */
+.writing-corner {
+    background:
+        radial-gradient(ellipse at center, rgba(107, 68, 35, 0.08), transparent 70%),
+        linear-gradient(180deg, var(--paper-aged), var(--paper-bg));
+    border-top: 1px solid rgba(166, 124, 46, 0.25);
+    border-bottom: 1px solid rgba(166, 124, 46, 0.25);
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 32px;
+    position: relative;
+}
+.quote-mark {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 120px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.4;
+    height: 60px;
+    margin-bottom: 16px;
+}
+.quote-text {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.7;
+    color: var(--coffee-dark);
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+.quote-author {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-faded);
+}
+.quote-author::before {
+    content: '— ';
+    color: var(--gold);
+}
+
+/* مكتب الكتابة */
+.desk {
+    margin-top: 60px;
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 32px;
+}
+.desk-paper {
+    background:
+        linear-gradient(180deg, transparent 0 38px, rgba(74, 56, 38, 0.13) 38px 39px),
+        var(--paper-light);
+    background-size: 100% 39px;
+    padding: 40px;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.5) inset,
+        0 16px 36px var(--shadow-mid);
+    border: 1px solid rgba(166, 124, 46, 0.25);
+    border-radius: 3px;
+    position: relative;
+    min-height: 220px;
+}
+.desk-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 60px;
+    bottom: 0;
+    width: 1px;
+    background: rgba(184, 92, 42, 0.35);
+}
+
+.thought-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: 'Amiri', serif;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 39px;
+    resize: vertical;
+    min-height: 200px;
+    outline: none;
+    direction: rtl;
+}
+.thought-input::placeholder {
+    color: var(--ink-faded);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.desk-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding: 0 8px;
+}
+.desk-hint {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faded);
+    font-style: italic;
+}
+.save-thought-btn {
+    background: var(--coffee);
+    color: var(--paper-light);
+    border: none;
+    padding: 10px 24px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px var(--shadow-mid);
+}
+.save-thought-btn:hover {
+    background: var(--coffee-dark);
+    transform: translateY(-2px);
+}
+
+/* قائمة الأفكار المحفوظة */
+.saved-thoughts {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.thought-chip {
+    background: rgba(248, 239, 217, 0.7);
+    border-right: 3px solid var(--gold);
+    padding: 12px 18px;
+    font-family: 'Amiri', serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    border-radius: 0 2px 2px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+.thought-chip-date {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 11px;
+    color: var(--ink-faded);
+    white-space: nowrap;
+}
+.thought-chip-text {
+    flex: 1;
+    line-height: 1.7;
+}
+.thought-delete {
+    background: transparent;
+    border: none;
+    color: var(--wine);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 2px 6px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+.thought-delete:hover {
+    opacity: 1;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١١. التصنيفات
+   ══════════════════════════════════════════════════════════════ */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.category-card {
+    background: var(--paper-light);
+    border: 1px solid rgba(166, 124, 46, 0.3);
+    padding: 28px 20px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px var(--shadow-soft);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.category-card::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(166, 124, 46, 0.25);
+    border-radius: 2px;
+    pointer-events: none;
+}
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 26px var(--shadow-mid);
+    background: var(--paper-aged);
+}
+.category-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: var(--gold);
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+.category-card:hover .category-icon {
+    transform: rotate(-8deg) scale(1.1);
+}
+.category-name {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 22px;
+    color: var(--coffee-dark);
+    margin-bottom: 6px;
+}
+.category-count {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faded);
+    letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٢. عني / من أنا
+   ══════════════════════════════════════════════════════════════ */
+.about-section {
+    background:
+        linear-gradient(180deg, var(--paper-bg), var(--paper-aged));
+    border-top: 1px solid rgba(166, 124, 46, 0.25);
+}
+
+.about-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 56px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-portrait {
+    aspect-ratio: 3/4;
+    background:
+        radial-gradient(circle at 30% 30%, var(--paper-light), var(--paper-aged) 60%, var(--paper-shadow));
+    border-radius: 3px;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.4) inset,
+        0 16px 36px var(--shadow-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--coffee-light);
+    font-size: 90px;
+    position: relative;
+    border: 1px solid rgba(166, 124, 46, 0.3);
+}
+.about-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(166, 124, 46, 0.4);
+    border-radius: 2px;
+    pointer-events: none;
+}
+/* شريط لاصق على البورتريه */
+.about-portrait::after {
+    content: '';
+    position: absolute;
+    top: -14px;
+    right: 50%;
+    transform: translateX(50%) rotate(-2deg);
+    width: 100px;
+    height: 24px;
+    background: rgba(184, 92, 42, 0.3);
+    border: 1px solid rgba(184, 92, 42, 0.4);
+}
+
+.about-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    filter: sepia(0.18) saturate(0.95);
+}
+
+.about-content h3 {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 38px;
+    color: var(--coffee-dark);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+.about-content .greeting {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    color: var(--gold-dark);
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+.about-content p {
+    font-family: 'Amiri', serif;
+    font-size: 17px;
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+}
+.about-signature {
+    margin-top: 28px;
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 26px;
+    color: var(--coffee);
+    transform: rotate(-3deg);
+    display: inline-block;
+}
+.about-signature::before {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 1px;
+    background: var(--coffee);
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-bottom: 6px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٣. التذييل
+   ══════════════════════════════════════════════════════════════ */
+.footer {
+    background: linear-gradient(180deg, var(--paper-aged), var(--paper-shadow));
+    padding: 56px 32px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(107, 68, 35, 0.2);
+    position: relative;
+}
+.footer-ornament {
+    color: var(--gold);
+    font-size: 24px;
+    letter-spacing: 12px;
+    margin-bottom: 18px;
+}
+.footer-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 28px;
+    color: var(--coffee-dark);
+    margin-bottom: 8px;
+}
+.footer-tagline {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    color: var(--ink-faded);
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+.footer-meta {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faded);
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(107, 68, 35, 0.3);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٤. النوافذ المنبثقة (Modals)
+   ══════════════════════════════════════════════════════════════ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 25, 10, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: fadeIn 0.3s ease;
+}
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--paper-light);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.5) inset,
+        0 30px 60px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(166, 124, 46, 0.3);
+    position: relative;
+    animation: slideUp 0.4s ease;
+}
+.modal-large {
+    max-width: 820px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: transparent;
+    border: 1px solid rgba(107, 68, 35, 0.25);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--coffee-dark);
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.modal-close:hover {
+    background: var(--wine);
+    color: var(--paper-light);
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 32px;
+    color: var(--coffee-dark);
+    margin-bottom: 6px;
+    padding-left: 50px;
+}
+.modal-subtitle {
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    color: var(--ink-faded);
+    margin-bottom: 28px;
+    padding-left: 50px;
+}
+
+/* قراءة المقالة */
+.reader-meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed rgba(107, 68, 35, 0.3);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    color: var(--ink-faded);
+    flex-wrap: wrap;
+}
+.reader-content {
+    font-family: 'Amiri', serif;
+    font-size: 19px;
+    line-height: 2.1;
+    color: var(--ink);
+}
+.reader-content p {
+    margin-bottom: 18px;
+}
+
+/* النماذج */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-label {
+    display: block;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 14px;
+    color: var(--coffee-dark);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    background: var(--paper-bg);
+    border: 1px solid rgba(166, 124, 46, 0.4);
+    padding: 12px 16px;
+    font-family: 'Amiri', serif;
+    font-size: 16px;
+    color: var(--ink);
+    border-radius: 3px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    direction: rtl;
+    outline: none;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(166, 124, 46, 0.15);
+}
+.form-textarea {
+    resize: vertical;
+    min-height: 160px;
+    line-height: 1.9;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--coffee);
+    color: var(--paper-light);
+    border: none;
+    padding: 12px 28px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px var(--shadow-mid);
+}
+.btn:hover {
+    background: var(--coffee-dark);
+    transform: translateY(-2px);
+}
+.btn-ghost {
+    background: transparent;
+    color: var(--coffee-dark);
+    border: 1px solid var(--coffee-light);
+    box-shadow: none;
+}
+.btn-ghost:hover {
+    background: rgba(107, 68, 35, 0.08);
+    transform: none;
+}
+.btn-danger {
+    background: var(--wine);
+}
+.btn-danger:hover {
+    background: #5a1f1f;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(107, 68, 35, 0.3);
+}
+
+/* لوحة المسؤول */
+.admin-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(107, 68, 35, 0.2);
+}
+.admin-tab {
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 15px;
+    color: var(--ink-faded);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.admin-tab.active {
+    color: var(--coffee-dark);
+    border-bottom-color: var(--gold);
+}
+
+.admin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    max-height: 320px;
+    overflow-y: auto;
+}
+.admin-list-item {
+    background: var(--paper-bg);
+    border: 1px solid rgba(166, 124, 46, 0.25);
+    padding: 14px 18px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    transition: background 0.2s ease;
+}
+.admin-list-item:hover {
+    background: var(--paper-aged);
+}
+.admin-item-info {
+    flex: 1;
+    min-width: 0;
+}
+.admin-item-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 18px;
+    color: var(--coffee-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.admin-item-meta {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faded);
+    margin-top: 2px;
+}
+.admin-item-actions {
+    display: flex;
+    gap: 6px;
+}
+.icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(107, 68, 35, 0.3);
+    background: transparent;
+    color: var(--coffee-dark);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.icon-btn:hover {
+    background: var(--coffee);
+    color: var(--paper-light);
+}
+.icon-btn.danger:hover {
+    background: var(--wine);
+}
+
+/* شريحة معاينة الصورة */
+.img-preview {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--paper-bg);
+    border: 1px dashed rgba(166, 124, 46, 0.4);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-faded);
+    font-style: italic;
+    margin-bottom: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+.img-preview:hover {
+    border-color: var(--gold);
+}
+.img-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* رسالة نجاح / تنبيه */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%) translateY(20px);
+    background: var(--forest-deep);
+    color: var(--paper-light);
+    padding: 14px 28px;
+    border-radius: 3px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 15px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 200;
+    pointer-events: none;
+}
+.toast.show {
+    opacity: 1;
+    transform: translateX(50%) translateY(0);
+}
+.toast.error { background: var(--wine); }
+
+/* ══════════════════════════════════════════════════════════════
+   ١٥. الحركات (Animations)
+   ══════════════════════════════════════════════════════════════ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+
+/* تكشّف العناصر عند التمرير */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٦. الاستجابة للجوال (Responsive)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 880px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background: var(--paper-light);
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid rgba(166, 124, 46, 0.25);
+        box-shadow: 0 8px 20px var(--shadow-mid);
+    }
+    .nav-links.open { display: flex; }
+    .menu-toggle { display: block; }
+    .nav-bar { padding: 12px 20px; }
+    .nav-logo { font-size: 20px; }
+
+    .section { padding: 70px 20px; }
+    .hero { padding: 120px 20px 60px; }
+
+    .about-wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+    }
+    .about-portrait {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    .about-signature { display: block; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    .timeline::before { right: 24px; transform: none; }
+    .memory-item,
+    .memory-item:nth-child(odd),
+    .memory-item:nth-child(even) {
+        width: 100%;
+        margin: 0;
+        padding: 16px 16px 16px 56px;
+        text-align: right;
+    }
+    .memory-item::before,
+    .memory-item:nth-child(odd)::before,
+    .memory-item:nth-child(even)::before {
+        right: 15px;
+        left: auto;
+    }
+    .memory-item:nth-child(odd) .memory-card::before,
+    .memory-item:nth-child(even) .memory-card::before {
+        right: 24px;
+        left: auto;
+        transform: rotate(-3deg);
+    }
+
+    .modal { padding: 32px 24px; }
+    .modal-title { padding-left: 40px; font-size: 26px; }
+
+    .bookmark-trigger { left: 16px; width: 30px; height: 60px; }
+    .coffee-stain.top-right { display: none; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 52px; }
+    .post-card { padding: 24px 22px; }
+    .desk-paper { padding: 28px 20px; }
+}
+
+/* قسم لوحة المسؤول الفعلية */
+.body-content-padding {
+    padding-top: 60px;
+}
+</style>
+</head>
+<body>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ شريط التنقل العلوي                                          ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<nav class="nav-bar">
+    <div class="nav-logo">
+        <span class="logo-ornament">❦</span>
+        <span>دفاتر الذاكرة</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#posts">الكتابات</a></li>
+        <li><a href="#memories">الذكريات</a></li>
+        <li><a href="#corner">ركن الكتابة</a></li>
+        <li><a href="#categories">التصنيفات</a></li>
+        <li><a href="#about">من أنا</a></li>
+    </ul>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="القائمة">≡</button>
+</nav>
+
+<!-- إشارة مرجعية مخفية لفتح لوحة التحرير -->
+<div class="bookmark-trigger" onclick="openAdminLogin()" title="لوحة التحرير"></div>
+
+<div class="content-wrap">
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ القسم الرئيسي                                                 ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<header class="hero">
+    <div class="coffee-stain top-right"></div>
+    <div class="coffee-stain bottom-left"></div>
+
+    <div class="hero-ornament-top">❦ ✦ ❦</div>
+
+    <h1 class="hero-title">دفاتر <span class="ink-blot">الذاكرة</span></h1>
+
+    <div class="hero-divider">
+        <span class="line"></span>
+        <span class="ornament">❀</span>
+        <span class="line"></span>
+    </div>
+
+    <p class="hero-subtitle">
+        حيث تسكن الحكايا بين رفوف الورق وأكواب القهوة
+    </p>
+
+    <p class="hero-intro">
+        في هذا الركن الصغير من العالم، أُسجّل ما لا تسعه الأيام:
+        خواطرَ صباحٍ هادئ، وروائحَ كتبٍ قديمة، ومقاهي قديمة كانت ضوءها أصفر،
+        ولحظاتٍ صغيرة تكبر مع الوقت حتى تصير عمراً كاملاً.
+        مرحباً بك في دفاتري… اقرأ على مَهَل، ولا تنسَ أن تشرب قهوتك.
+    </p>
+
+    <div class="scroll-hint">تابع الورق</div>
+</header>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ قسم المقالات                                                  ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<section class="section" id="posts">
+    <div class="section-header reveal">
+        <div class="section-eyebrow">من الدفاتر</div>
+        <h2 class="section-title">آخر <span class="deco">❦</span> الكتابات</h2>
+        <p class="section-subtitle">كلماتٌ كتبتُها على هامش الأيام، أتركها هنا لمن يهوى القراءة على مَهَل</p>
+    </div>
+
+    <div class="posts-grid" id="postsGrid">
+        <!-- البطاقات تُضاف عبر JavaScript -->
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ قسم الذكريات                                                  ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<section class="section memories-section" id="memories">
+    <div class="section-header reveal">
+        <div class="section-eyebrow">من الأرشيف</div>
+        <h2 class="section-title">ذكرياتٌ <span class="deco">✦</span> لا تُنسى</h2>
+        <p class="section-subtitle">لحظاتٌ صغيرة من حياتي، أحتفظ بها كأنها صورٌ في ألبومٍ قديم</p>
+    </div>
+
+    <div class="timeline" id="timelineWrap">
+        <!-- العناصر تُضاف عبر JavaScript -->
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ ركن الكتابة                                                   ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<section class="section writing-corner" id="corner">
+    <div class="section-header reveal">
+        <div class="section-eyebrow">على المكتب</div>
+        <h2 class="section-title">ركن <span class="deco">❧</span> الكتابة</h2>
+    </div>
+
+    <div class="quote-container reveal">
+        <div class="quote-mark">"</div>
+        <p class="quote-text" id="quoteText">
+            الكتابةُ نوعٌ من الحياة المُضاعَفة؛ تعيشُ مرّةً في الحياة،
+            ومرّةً ثانيةً حين تكتبُها.
+        </p>
+        <p class="quote-author" id="quoteAuthor">غسان كنفاني</p>
+    </div>
+
+    <div class="desk reveal">
+        <div class="desk-paper">
+            <textarea
+                class="thought-input"
+                id="thoughtInput"
+                placeholder="اكتب فكرةً أو خاطرةً عابرة… الورق لا يستعجلك"
+                rows="5"
+            ></textarea>
+            <div class="desk-actions">
+                <span class="desk-hint">تُحفظ خواطرك على هذا الجهاز فقط</span>
+                <button class="save-thought-btn" onclick="saveThought()">
+                    حفظ الخاطرة
+                </button>
+            </div>
+        </div>
+        <div class="saved-thoughts" id="savedThoughts"></div>
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ التصنيفات                                                    ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<section class="section" id="categories">
+    <div class="section-header reveal">
+        <div class="section-eyebrow">رفوف المكتبة</div>
+        <h2 class="section-title">التصنيفات</h2>
+    </div>
+
+    <div class="categories-grid" id="categoriesGrid">
+        <!-- يتم بناؤها ديناميكياً -->
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ من أنا                                                       ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<section class="section about-section" id="about">
+    <div class="section-header reveal">
+        <div class="section-eyebrow">تعارف</div>
+        <h2 class="section-title">من <span class="deco">❦</span> أنا</h2>
+    </div>
+
+    <div class="about-wrap reveal">
+        <div class="about-portrait" id="aboutPortrait">
+            <span id="aboutPortraitIcon">☕</span>
+        </div>
+        <div class="about-content" id="aboutContent">
+            <!-- يُملأ عبر JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ التذييل                                                      ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<footer class="footer">
+    <div class="footer-ornament">❦ ✦ ❀ ✦ ❦</div>
+    <div class="footer-title">دفاتر الذاكرة</div>
+    <p class="footer-tagline">"كلُّ كلمةٍ هنا فنجانُ قهوةٍ سُكِبَ على ورق"</p>
+    <div class="footer-meta">
+        © جميع الحقوق محفوظة — صُمِّمَ بحبٍّ على ضوءِ مصباحٍ خافت
+    </div>
+</footer>
+
+</div><!-- /content-wrap -->
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ نافذة قراءة المقالة                                          ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<div class="modal-overlay" id="readerModal">
+    <div class="modal modal-large">
+        <button class="modal-close" onclick="closeModal('readerModal')" aria-label="إغلاق">×</button>
+        <h2 class="modal-title" id="readerTitle"></h2>
+        <p class="modal-subtitle" id="readerSubtitle"></p>
+        <div class="reader-meta" id="readerMeta"></div>
+        <div class="reader-content" id="readerContent"></div>
+    </div>
+</div>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ نافذة تسجيل الدخول للمسؤول                                    ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<div class="modal-overlay" id="loginModal">
+    <div class="modal" style="max-width: 420px;">
+        <button class="modal-close" onclick="closeModal('loginModal')" aria-label="إغلاق">×</button>
+        <h2 class="modal-title" style="padding-left: 0;">لوحة التحرير</h2>
+        <p class="modal-subtitle" style="padding-left: 0;">أدخل كلمة السر للدخول إلى دفاترك</p>
+
+        <div class="form-group">
+            <label class="form-label" for="passwordInput">كلمة السر</label>
+            <input type="password" class="form-input" id="passwordInput" placeholder="••••••••" autocomplete="current-password">
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-ghost" onclick="closeModal('loginModal')">إلغاء</button>
+            <button class="btn" onclick="checkPassword()">دخول</button>
+        </div>
+    </div>
+</div>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ لوحة المسؤول الرئيسية                                         ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<div class="modal-overlay" id="adminModal">
+    <div class="modal modal-large">
+        <button class="modal-close" onclick="closeModal('adminModal')" aria-label="إغلاق">×</button>
+        <h2 class="modal-title">لوحة التحرير</h2>
+        <p class="modal-subtitle">أهلاً بك… اكتب، عدّل، أو احذف ما تشاء</p>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="postsTab" onclick="switchTab('postsTab')">الكتابات</button>
+            <button class="admin-tab" data-tab="memoriesTab" onclick="switchTab('memoriesTab')">الذكريات</button>
+            <button class="admin-tab" data-tab="aboutTab" onclick="switchTab('aboutTab')">من أنا</button>
+            <button class="admin-tab" data-tab="settingsTab" onclick="switchTab('settingsTab')">إعدادات</button>
+        </div>
+
+        <!-- تبويب المقالات -->
+        <div class="admin-section" id="postsTab">
+            <div class="admin-list" id="adminPostsList"></div>
+            <button class="btn" onclick="openPostEditor()">＋ كتابة جديدة</button>
+        </div>
+
+        <!-- تبويب الذكريات -->
+        <div class="admin-section" id="memoriesTab" style="display: none;">
+            <div class="admin-list" id="adminMemoriesList"></div>
+            <button class="btn" onclick="openMemoryEditor()">＋ ذكرى جديدة</button>
+        </div>
+
+        <!-- تبويب "من أنا" -->
+        <div class="admin-section" id="aboutTab" style="display: none;">
+            <div class="form-group">
+                <label class="form-label" for="aboutName">الاسم / عنوان قسم "من أنا"</label>
+                <input type="text" class="form-input" id="aboutName">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="aboutGreeting">تحية افتتاحية</label>
+                <input type="text" class="form-input" id="aboutGreeting">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="aboutBio">نبذة شخصية</label>
+                <textarea class="form-textarea" id="aboutBio" rows="6"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">صورتك (اختياري)</label>
+                <div class="img-preview" id="aboutImgPreview" onclick="document.getElementById('aboutImgInput').click()">
+                    <span>اضغط لاختيار صورة</span>
+                </div>
+                <input type="file" id="aboutImgInput" accept="image/*" style="display:none;" onchange="handleImg(event,'aboutImgPreview')">
+            </div>
+            <button class="btn" onclick="saveAbout()">حفظ التغييرات</button>
+        </div>
+
+        <!-- تبويب الإعدادات -->
+        <div class="admin-section" id="settingsTab" style="display: none;">
+            <div class="form-group">
+                <label class="form-label" for="settingQuoteText">الاقتباس في ركن الكتابة</label>
+                <textarea class="form-textarea" id="settingQuoteText" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="settingQuoteAuthor">صاحب الاقتباس</label>
+                <input type="text" class="form-input" id="settingQuoteAuthor">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="settingPassword">تغيير كلمة السر</label>
+                <input type="text" class="form-input" id="settingPassword" placeholder="اتركها فارغة إن لم ترد تغييرها">
+            </div>
+            <button class="btn" onclick="saveSettings()">حفظ الإعدادات</button>
+            <hr style="margin: 28px 0; border: none; border-top: 1px dashed rgba(107,68,35,0.3);">
+            <button class="btn btn-ghost" onclick="exportData()">تصدير كلّ البيانات (JSON)</button>
+            <button class="btn btn-ghost" onclick="document.getElementById('importInput').click()">استيراد بيانات</button>
+            <input type="file" id="importInput" accept=".json" style="display:none;" onchange="importData(event)">
+            <button class="btn btn-danger" style="margin-top: 12px;" onclick="resetData()">إعادة ضبط كلّ شيء</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ نافذة تعديل/إضافة مقالة                                       ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<div class="modal-overlay" id="postEditorModal">
+    <div class="modal modal-large">
+        <button class="modal-close" onclick="closeModal('postEditorModal')" aria-label="إغلاق">×</button>
+        <h2 class="modal-title" id="postEditorTitle">كتابة جديدة</h2>
+        <p class="modal-subtitle">اكتب على مهلك… الورق صبور</p>
+
+        <div class="form-group">
+            <label class="form-label" for="postTitleInput">العنوان</label>
+            <input type="text" class="form-input" id="postTitleInput" placeholder="عنوانٌ يجذب القارئ">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label class="form-label" for="postCategoryInput">التصنيف</label>
+                <select class="form-select" id="postCategoryInput">
+                    <option>يوميات</option>
+                    <option>تأملات</option>
+                    <option>سفر</option>
+                    <option>قهوة وكتب</option>
+                    <option>لحظات مهمة</option>
+                    <option>أماكن لا تُنسى</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="postDateInput">التاريخ</label>
+                <input type="date" class="form-input" id="postDateInput">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="postExcerptInput">مقتطف قصير (يظهر على البطاقة)</label>
+            <textarea class="form-textarea" id="postExcerptInput" rows="3" placeholder="سطران أو ثلاثة يفتحان الشهية للقراءة..."></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="postContentInput">المحتوى الكامل</label>
+            <textarea class="form-textarea" id="postContentInput" rows="10" placeholder="هنا… اكتب بحرّية"></textarea>
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-ghost" onclick="closeModal('postEditorModal')">إلغاء</button>
+            <button class="btn" onclick="savePost()">حفظ المقالة</button>
+        </div>
+    </div>
+</div>
+
+<!-- ╔═══════════════════════════════════════════════════════════╗
+     ║ نافذة تعديل/إضافة ذكرى                                        ║
+     ╚═══════════════════════════════════════════════════════════╝ -->
+<div class="modal-overlay" id="memoryEditorModal">
+    <div class="modal modal-large">
+        <button class="modal-close" onclick="closeModal('memoryEditorModal')" aria-label="إغلاق">×</button>
+        <h2 class="modal-title" id="memoryEditorTitle">ذكرى جديدة</h2>
+        <p class="modal-subtitle">احفظ اللحظة قبل أن تنساها</p>
+
+        <div class="form-group">
+            <label class="form-label" for="memTitleInput">عنوان الذكرى</label>
+            <input type="text" class="form-input" id="memTitleInput">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label class="form-label" for="memDateInput">التاريخ</label>
+                <input type="text" class="form-input" id="memDateInput" placeholder="مثلاً: ربيع 1985">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="memLocationInput">المكان</label>
+                <input type="text" class="form-input" id="memLocationInput" placeholder="دمشق - بيت جدتي">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="memDescInput">الوصف</label>
+            <textarea class="form-textarea" id="memDescInput" rows="5"></textarea>
+        </div>
+        <div class="form-group">
+            <label class="form-label">صورة (اختياري)</label>
+            <div class="img-preview" id="memImgPreview" onclick="document.getElementById('memImgInput').click()">
+                <span>اضغط لاختيار صورة</span>
+            </div>
+            <input type="file" id="memImgInput" accept="image/*" style="display:none;" onchange="handleImg(event,'memImgPreview')">
+        </div>
+        <div class="modal-actions">
+            <button class="btn btn-ghost" onclick="closeModal('memoryEditorModal')">إلغاء</button>
+            <button class="btn" onclick="saveMemory()">حفظ الذكرى</button>
+        </div>
+    </div>
+</div>
+
+<!-- التنبيه السفلي -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   ١. الإعدادات الأساسية والبيانات الافتراضية
+   ══════════════════════════════════════════════════════════════ */
+const STORAGE_KEY = 'dafater_alzakira_data_v1';
+const DEFAULT_PASSWORD = '1980';   // كلمة السر الافتراضية (يمكن تغييرها لاحقاً من لوحة التحرير)
+
+// ✦ التصنيفات مع الأيقونات ✦
+const CATEGORIES = [
+    { name: 'يوميات',         icon: '✒' },
+    { name: 'تأملات',         icon: '❦' },
+    { name: 'سفر',            icon: '✦' },
+    { name: 'قهوة وكتب',      icon: '☕' },
+    { name: 'لحظات مهمة',     icon: '❀' },
+    { name: 'أماكن لا تُنسى', icon: '❧' }
+];
+
+// ✦ البيانات الافتراضية - تظهر للزائر أوّل مرة ✦
+const DEFAULT_DATA = {
+    password: DEFAULT_PASSWORD,
+    about: {
+        name: 'كاتب الدفاتر',
+        greeting: 'مرحباً، وأهلاً بك في زاويتي الصغيرة',
+        bio: 'أكتبُ لأنني لا أُحسن غير ذلك في الإمساك بالأيام قبل أن تفلت.\n\nأحبُّ الكتبَ القديمة، وقهوةَ الصباح، والمقاهي ذاتَ الإضاءة الصفراء، والحديثَ الطويل مع صديقٍ قديم.\n\nهنا تجد أوراقي المتناثرة: يوميات، وذكريات، وخواطرَ عابرة كتبتُها على هامش الأيام. اقرأ ما يُسعدك، ومرَّ على البقية كما يمرُّ الضوء على نافذة.',
+        portrait: null
+    },
+    quote: {
+        text: 'الكتابةُ نوعٌ من الحياة المُضاعَفة؛ تعيشُ مرّةً في الحياة، ومرّةً ثانيةً حين تكتبُها.',
+        author: 'غسان كنفاني'
+    },
+    posts: [
+        {
+            id: 1,
+            title: 'في مديح الصباحات الهادئة',
+            category: 'يوميات',
+            date: '2025-11-12',
+            excerpt: 'كلَّ صباحٍ أُحضّر فنجانَ القهوةِ نفسَه، وأجلسُ في الكرسيِّ نفسِه، وأنظرُ من النافذةِ ذاتِها. ومع ذلك، لا يُشبه صباحٌ صباحاً…',
+            content: 'كلَّ صباحٍ أُحضّر فنجانَ القهوةِ نفسَه، وأجلسُ في الكرسيِّ نفسِه، وأنظرُ من النافذةِ ذاتِها. ومع ذلك، لا يُشبه صباحٌ صباحاً.\n\nأحياناً يكونُ الضوءُ ذهبياً يدخلُ متسلّلاً من بين ستارتين رماديتين. وأحياناً يكونُ كسولاً، أبيضَ كحليبٍ منسكب على الطاولة. أتأمّلُ بخارَ القهوةِ وهو يصعدُ ببطء، فأشعرُ أنَّ كلَّ شيءٍ في الكون يكفي.\n\nالصباحاتُ الهادئةُ نعمةٌ لا يعرفها إلا من جرّبَ الصخب طويلاً. هي تذكيرٌ بأنَّ الحياةَ لا تحدثُ فقط في اللحظاتِ الكبيرة، بل تتسرّبُ — مثل الضوءِ تماماً — من شقوقِ الأيامِ العادية.\n\nاليومَ، شكرتُ السماءَ على فنجانِ القهوةِ هذا، وعلى الصمت، وعلى كرسيٍّ يعرفُ شكلَ ظهري.'
+        },
+        {
+            id: 2,
+            title: 'رائحة الكتب القديمة',
+            category: 'قهوة وكتب',
+            date: '2025-11-05',
+            excerpt: 'فتحتُ الخزانةَ القديمة فاستقبلتني تلك الرائحة — رائحةُ ورقٍ نَضِجَ، وأحبارٍ غفت، وأصابعَ عبرت الصفحاتِ منذ أربعين عاماً…',
+            content: 'فتحتُ الخزانةَ القديمة فاستقبلتني تلك الرائحة — رائحةُ ورقٍ نَضِجَ، وأحبارٍ غفت، وأصابعَ عبرت الصفحاتِ منذ أربعين عاماً.\n\nليست رائحةَ غبارٍ كما يظنُّ كثيرون. هي رائحةُ زمنٍ تشرَّبَتْه الصفحات. كلُّ كتابٍ قديم هو غرفةٌ مغلقةٌ منذ زمن، حين تفتحها يخرجُ منها هواءٌ مختلف؛ هواءُ ذلك العصر، وذلك المؤلف، وذلك القارئ الذي وضعَ ورقةَ شجرٍ في الصفحة السابعة وذهبَ ولم يعد.\n\nأمسكتُ بنسخةٍ من "موسم الهجرة إلى الشمال" طبعةُ بيروت ١٩٧٤. حواشي الصفحاتِ مليئةٌ بتعليقاتٍ بقلمٍ أزرق، خطٌّ متينٌ لرجلٍ كان شاباً يومها وربما صار جدّاً الآن. مَن كان يا تُرى؟ ماذا أحبَّ في هذا الكتاب؟ ولماذا توقّفَ عن التعليقِ بعد الفصلِ الخامس؟\n\nالكتبُ القديمةُ لا تموتُ، إنّها فقط تنتقلُ إلى يدٍ أخرى.'
+        },
+        {
+            id: 3,
+            title: 'شارع المتنبي في بغداد',
+            category: 'سفر',
+            date: '2025-10-22',
+            excerpt: 'يومَ الجمعةِ في بغداد لم يكن يوماً عادياً. كان موعداً مع الورق. مشيتُ في شارعِ المتنبي وأنا أُحاول ألاّ أمشي بسرعة…',
+            content: 'يومَ الجمعةِ في بغداد لم يكن يوماً عادياً. كان موعداً مع الورق.\n\nمشيتُ في شارعِ المتنبي وأنا أُحاول ألاّ أمشي بسرعة. الكتبُ مفروشةٌ على الأرض، على الطاولات، فوق الكراتين، على أيدي الباعةِ الذين عرفوا أسماءَ المؤلفين أكثرَ مما يعرفُ بعضُ الناسِ أسماءَ أقاربهم.\n\nقلتُ لبائعٍ: عندك ديوان السياب طبعة قديمة؟ ضحكَ وقال: ابني، هنا كلُّ شيءٍ موجود. حتى أحلامك إن سألتَ عنها.\n\nشربتُ شاياً عند مقهى الشابندر. النوافذُ مليئةٌ بصورِ الذين رحلوا. على الجدرانِ خطٌّ عربيٌّ ينزفُ من القِدَم. الزبائنُ يتحدّثونَ عن السياسة والشعر بنفسِ الحرارة، وكأنَّ الاثنينِ شيءٌ واحد.\n\nبغدادُ لم تكن مدينةً ذلك اليوم. كانت كتاباً مفتوحاً على صفحةٍ قديمة، وأنا قارئٌ حظِيَ بأن يمرَّ بأصابعهِ على الحرف.'
+        },
+        {
+            id: 4,
+            title: 'أبي وفنجان القهوة',
+            category: 'لحظات مهمة',
+            date: '2025-10-08',
+            excerpt: 'كان أبي يشربُ قهوته من فنجانٍ واحدٍ منذ أن وُلِدتُ. فنجانٌ أزرقُ صغير، حافتُه مثلومةٌ من جهةٍ واحدة. لا يقبلُ غيره…',
+            content: 'كان أبي يشربُ قهوته من فنجانٍ واحدٍ منذ أن وُلِدتُ. فنجانٌ أزرقُ صغير، حافتُه مثلومةٌ من جهةٍ واحدة. لا يقبلُ غيره.\n\nسألتُه مرّةً وأنا صغير: يا أبي، لماذا لا تستعمل فنجاناً جديداً؟ نظرَ إليَّ نظرةً طويلة، ثم قال: "لأنَّ هذا الفنجانَ يعرفني، والفناجينُ الجديدةُ لا تعرفُ أحداً."\n\nلم أفهم يومَها. فهمتُ بعد أن كبرتُ وفقدتُ أشياءَ كثيرة، وأدركتُ أنَّ بعضَ الأشياءِ الصغيرة تحتفظُ بأكثرَ مما نظنّ. الفنجانُ كان يحتفظُ بصباحاتِه كلّها، بأحاديثِه مع أمي، بصمتِه عند الحزن، بضحكاتِه يومَ نَجَحَتُ في الثانوية.\n\nاليومَ، أشربُ قهوتي من فنجانٍ ورِثتُه عنه. حافتُه مثلومة. وأنا أفهم.'
+        },
+        {
+            id: 5,
+            title: 'نوافذ بيت جدتي',
+            category: 'تأملات',
+            date: '2025-09-19',
+            excerpt: 'كانت لبيتِ جدتي ثلاثُ نوافذ. واحدةٌ تطلُّ على البحر، وواحدةٌ على شجرة الليمون، وواحدةٌ كانت دائماً مُغلقة…',
+            content: 'كانت لبيتِ جدتي ثلاثُ نوافذ. واحدةٌ تطلُّ على البحر، وواحدةٌ على شجرة الليمون، وواحدةٌ كانت دائماً مُغلقة.\n\nسألتها مرّةً: لماذا لا تفتحينَ النافذةَ الثالثة يا تيتا؟ قالت: "لأنَّ ورائها بيتُ الجيران، وحياتُهم ليست من شأني."\n\nأظنُّ أنَّ جدتي كانت أحكمَ ممّا ظننتُ. هي لم تكن تتحدّثُ عن الجيران، بل عن الحياةِ كلّها. ثلاثُ نوافذ: واحدةٌ للجمالِ الواسعِ الذي يُذكّرُك بصِغَرك (البحر)، وواحدةٌ للتفاصيلِ القريبةِ التي تُذكّرُك بنِعَمك (شجرة الليمون)، وواحدةٌ يجبُ أن تُغلَق لأنَّها ستُلهيك عن نوافذِك أنت (بيت الجيران).\n\nاليومَ، حين أبني بيتي في خيالي، أفكّرُ كثيراً في النوافذِ التي يجبُ أن أفتحَها، وتلكَ التي يجبُ أن أُغلقها. وأقولُ في قلبي: شكراً يا تيتا.'
+        }
+    ],
+    memories: [
+        {
+            id: 1,
+            title: 'أوّل رحلة إلى دمشق',
+            date: 'ربيع 1985',
+            location: 'دمشق - حي الميدان',
+            description: 'سافرتُ مع أبي في قطار الفجر. كانتْ دمشقُ تستيقظ ببطء، رائحةُ الياسمين تتسلّلُ من البيوت، وصوتُ المؤذنِ يخرجُ من جامعِ الأمويين كأنّه ينادي شيئاً في داخلي.',
+            image: null
+        },
+        {
+            id: 2,
+            title: 'لقائي بصديق العمر',
+            date: 'خريف 1992',
+            location: 'مقهى الروضة - دمشق',
+            description: 'جلسنا ست ساعات متواصلة، تكلّمنا عن كلِّ شيء ولا شيء. شربنا ثمانيةَ فناجين قهوة، وضحكنا حتى بكينا. لم نعرف يومَها أنَّ تلك الجلسةَ ستُصبح أساسَ صداقةٍ تمتدُّ ثلاثين عاماً.',
+            image: null
+        },
+        {
+            id: 3,
+            title: 'عيد ميلاد أمي السبعون',
+            date: 'شتاء 2010',
+            location: 'البيت العائلي',
+            description: 'اجتمعَ الأبناءُ والأحفاد. كانتْ أمي ترتدي ثوبَها الأزرق، وعيناها تلمعانِ كأنَّها عروسٌ صغيرة. أطفأتْ شموعَها بنَفَسٍ واحدٍ ثمَّ قالت: "لا أحتاجُ تمنّياً، عندي كلُّ ما أتمنّى."',
+            image: null
+        },
+        {
+            id: 4,
+            title: 'ليلة نشر أوّل قصة',
+            date: '12 مارس 2003',
+            location: 'بيتي القديم',
+            description: 'كنتُ أُمسكُ بالمجلّةِ وأقرأُ اسمي مطبوعاً تحتَ العنوان. قرأتُها عشرَ مرّات لأتأكّد. لم أَنَمْ تلك الليلة. شربتُ شاياً بعدَ شاي، وكتبتُ قصةً جديدة لم أنشرها أبداً.',
+            image: null
+        }
+    ],
+    thoughts: []
+};
+
+/* ══════════════════════════════════════════════════════════════
+   ٢. إدارة التخزين المحلي
+   ══════════════════════════════════════════════════════════════ */
+let data = loadData();
+
+function loadData() {
+    try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored) {
+            const parsed = JSON.parse(stored);
+            // التأكد من وجود كلّ الحقول
+            return Object.assign({}, DEFAULT_DATA, parsed, {
+                about: Object.assign({}, DEFAULT_DATA.about, parsed.about || {}),
+                quote: Object.assign({}, DEFAULT_DATA.quote, parsed.quote || {})
+            });
+        }
+    } catch (e) {
+        console.warn('فشل تحميل البيانات:', e);
+    }
+    return JSON.parse(JSON.stringify(DEFAULT_DATA));
+}
+
+function saveData() {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        return true;
+    } catch (e) {
+        showToast('تعذّر الحفظ على هذا المتصفح', true);
+        return false;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٣. عرض البطاقات والمحتوى
+   ══════════════════════════════════════════════════════════════ */
+
+// تنسيق التاريخ بالعربية
+function formatDate(dateStr) {
+    if (!dateStr) return '';
+    // إذا كان التاريخ بصيغة YYYY-MM-DD
+    if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+        const months = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+        const [y,m,d] = dateStr.split('-');
+        return `${parseInt(d)} ${months[parseInt(m)-1]} ${y}`;
+    }
+    return dateStr;
+}
+
+// إنشاء بطاقة مقال
+function renderPosts() {
+    const grid = document.getElementById('postsGrid');
+    grid.innerHTML = '';
+    // ترتيب من الأحدث للأقدم
+    const sorted = [...data.posts].sort((a,b) => (b.date || '').localeCompare(a.date || ''));
+
+    sorted.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'post-card reveal';
+        card.innerHTML = `
+            <div class="card-admin-tools">
+                <button class="card-tool-btn" onclick="editPost(${post.id})" title="تعديل">✎</button>
+                <button class="card-tool-btn" onclick="deletePost(${post.id})" title="حذف">×</button>
+            </div>
+            <div class="post-meta">
+                <span class="post-category">${escapeHtml(post.category)}</span>
+                <span class="post-date">${formatDate(post.date)}</span>
+            </div>
+            <h3 class="post-title">${escapeHtml(post.title)}</h3>
+            <p class="post-excerpt">${escapeHtml(post.excerpt)}</p>
+            <button class="post-read" onclick="openReader(${post.id})">
+                <span>اقرأ المزيد</span>
+                <span class="arrow">←</span>
+            </button>
+        `;
+        grid.appendChild(card);
+    });
+    observeReveals();
+}
+
+// عرض الذكريات
+function renderMemories() {
+    const wrap = document.getElementById('timelineWrap');
+    wrap.innerHTML = '';
+    const sorted = [...data.memories]; // ترتيب حسب الإدخال
+
+    sorted.forEach(mem => {
+        const item = document.createElement('div');
+        item.className = 'memory-item reveal';
+        item.innerHTML = `
+            <div class="memory-card">
+                ${data.adminMode ? `
+                    <div class="card-admin-tools" style="display:flex;">
+                        <button class="card-tool-btn" onclick="editMemory(${mem.id})" title="تعديل">✎</button>
+                        <button class="card-tool-btn" onclick="deleteMemory(${mem.id})" title="حذف">×</button>
+                    </div>` : ''}
+                <div class="memory-image">
+                    ${mem.image ? `<img src="${mem.image}" alt="${escapeHtml(mem.title)}">` : '📷'}
+                </div>
+                <div class="memory-date">${escapeHtml(mem.date)}</div>
+                <h3 class="memory-title">${escapeHtml(mem.title)}</h3>
+                <div class="memory-location">${escapeHtml(mem.location || '')}</div>
+                <p class="memory-description">${escapeHtml(mem.description)}</p>
+            </div>
+        `;
+        wrap.appendChild(item);
+    });
+    observeReveals();
+}
+
+// عرض التصنيفات
+function renderCategories() {
+    const grid = document.getElementById('categoriesGrid');
+    grid.innerHTML = '';
+    CATEGORIES.forEach(cat => {
+        const count = data.posts.filter(p => p.category === cat.name).length;
+        const card = document.createElement('div');
+        card.className = 'category-card reveal';
+        card.innerHTML = `
+            <div class="category-icon">${cat.icon}</div>
+            <div class="category-name">${cat.name}</div>
+            <div class="category-count">${count} ${count === 1 ? 'كتابة' : 'كتابات'}</div>
+        `;
+        card.onclick = () => filterByCategory(cat.name);
+        grid.appendChild(card);
+    });
+    observeReveals();
+}
+
+function filterByCategory(catName) {
+    // تمرير لقسم الكتابات مع تمييز التصنيف
+    document.getElementById('posts').scrollIntoView({ behavior: 'smooth' });
+    // يمكن لاحقاً إضافة فلترة فعلية
+    showToast(`عرض كتابات: ${catName}`);
+}
+
+// عرض قسم "من أنا"
+function renderAbout() {
+    const c = document.getElementById('aboutContent');
+    const bioHtml = data.about.bio
+        .split('\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${escapeHtml(p)}</p>`)
+        .join('');
+    c.innerHTML = `
+        <h3>${escapeHtml(data.about.name)}</h3>
+        <p class="greeting">${escapeHtml(data.about.greeting)}</p>
+        ${bioHtml}
+        <div class="about-signature">${escapeHtml(data.about.name)}</div>
+    `;
+    const portrait = document.getElementById('aboutPortrait');
+    if (data.about.portrait) {
+        portrait.innerHTML = `<img src="${data.about.portrait}" alt="${escapeHtml(data.about.name)}">`;
+    } else {
+        portrait.innerHTML = '<span>☕</span>';
+    }
+}
+
+// تحديث الاقتباس
+function renderQuote() {
+    document.getElementById('quoteText').textContent = data.quote.text;
+    document.getElementById('quoteAuthor').textContent = data.quote.author;
+}
+
+// عرض كل البيانات
+function renderAll() {
+    renderPosts();
+    renderMemories();
+    renderCategories();
+    renderAbout();
+    renderQuote();
+    renderThoughts();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٤. قراءة المقالة (Modal)
+   ══════════════════════════════════════════════════════════════ */
+function openReader(id) {
+    const post = data.posts.find(p => p.id === id);
+    if (!post) return;
+    document.getElementById('readerTitle').textContent = post.title;
+    document.getElementById('readerSubtitle').textContent = 'من دفاتر الذاكرة';
+    document.getElementById('readerMeta').innerHTML = `
+        <span class="post-category">${escapeHtml(post.category)}</span>
+        <span>✦</span>
+        <span>${formatDate(post.date)}</span>
+    `;
+    const content = post.content
+        .split('\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${escapeHtml(p)}</p>`)
+        .join('');
+    document.getElementById('readerContent').innerHTML = content;
+    openModal('readerModal');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٥. ركن الكتابة - الأفكار العابرة
+   ══════════════════════════════════════════════════════════════ */
+function saveThought() {
+    const input = document.getElementById('thoughtInput');
+    const text = input.value.trim();
+    if (!text) {
+        showToast('اكتب شيئاً أوّلاً', true);
+        return;
+    }
+    data.thoughts = data.thoughts || [];
+    data.thoughts.unshift({
+        id: Date.now(),
+        text,
+        date: new Date().toISOString()
+    });
+    if (data.thoughts.length > 20) data.thoughts.length = 20; // الحدّ الأقصى
+    saveData();
+    input.value = '';
+    renderThoughts();
+    showToast('حُفظت خاطرتك ✦');
+}
+
+function renderThoughts() {
+    const wrap = document.getElementById('savedThoughts');
+    wrap.innerHTML = '';
+    (data.thoughts || []).forEach(t => {
+        const d = new Date(t.date);
+        const dateStr = `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`;
+        const chip = document.createElement('div');
+        chip.className = 'thought-chip';
+        chip.innerHTML = `
+            <div class="thought-chip-text">${escapeHtml(t.text)}</div>
+            <span class="thought-chip-date">${dateStr}</span>
+            <button class="thought-delete" onclick="deleteThought(${t.id})" title="حذف">✕</button>
+        `;
+        wrap.appendChild(chip);
+    });
+}
+
+function deleteThought(id) {
+    data.thoughts = (data.thoughts || []).filter(t => t.id !== id);
+    saveData();
+    renderThoughts();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٦. لوحة المسؤول - تسجيل الدخول
+   ══════════════════════════════════════════════════════════════ */
+function openAdminLogin() {
+    if (data.adminMode) {
+        openModal('adminModal');
+        renderAdminLists();
+        loadAboutForm();
+        loadSettingsForm();
+    } else {
+        openModal('loginModal');
+        setTimeout(() => document.getElementById('passwordInput').focus(), 100);
+    }
+}
+
+function checkPassword() {
+    const input = document.getElementById('passwordInput');
+    if (input.value === data.password) {
+        data.adminMode = true;
+        document.body.classList.add('admin-mode');
+        closeModal('loginModal');
+        input.value = '';
+        openModal('adminModal');
+        renderAdminLists();
+        loadAboutForm();
+        loadSettingsForm();
+        renderMemories(); // لتظهر أزرار التعديل
+        showToast('أهلاً بك في لوحة التحرير ✦');
+    } else {
+        showToast('كلمة السر غير صحيحة', true);
+        input.value = '';
+        input.focus();
+    }
+}
+
+// تفعيل Enter في حقل كلمة السر
+document.addEventListener('DOMContentLoaded', () => {
+    const pwd = document.getElementById('passwordInput');
+    pwd.addEventListener('keypress', e => {
+        if (e.key === 'Enter') checkPassword();
+    });
+});
+
+/* ══════════════════════════════════════════════════════════════
+   ٧. لوحة المسؤول - إدارة القوائم
+   ══════════════════════════════════════════════════════════════ */
+function switchTab(tabId) {
+    document.querySelectorAll('.admin-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+    document.querySelectorAll('.admin-section').forEach(s => s.style.display = s.id === tabId ? 'block' : 'none');
+}
+
+function renderAdminLists() {
+    // قائمة المقالات
+    const postsList = document.getElementById('adminPostsList');
+    postsList.innerHTML = '';
+    if (data.posts.length === 0) {
+        postsList.innerHTML = '<p style="text-align:center; color: var(--ink-faded); padding: 20px;">لا توجد كتابات بعد</p>';
+    } else {
+        [...data.posts].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).forEach(post => {
+            const item = document.createElement('div');
+            item.className = 'admin-list-item';
+            item.innerHTML = `
+                <div class="admin-item-info">
+                    <div class="admin-item-title">${escapeHtml(post.title)}</div>
+                    <div class="admin-item-meta">${escapeHtml(post.category)} ✦ ${formatDate(post.date)}</div>
+                </div>
+                <div class="admin-item-actions">
+                    <button class="icon-btn" onclick="editPost(${post.id})" title="تعديل">✎</button>
+                    <button class="icon-btn danger" onclick="deletePost(${post.id})" title="حذف">×</button>
+                </div>
+            `;
+            postsList.appendChild(item);
+        });
+    }
+
+    // قائمة الذكريات
+    const memList = document.getElementById('adminMemoriesList');
+    memList.innerHTML = '';
+    if (data.memories.length === 0) {
+        memList.innerHTML = '<p style="text-align:center; color: var(--ink-faded); padding: 20px;">لا توجد ذكريات بعد</p>';
+    } else {
+        data.memories.forEach(mem => {
+            const item = document.createElement('div');
+            item.className = 'admin-list-item';
+            item.innerHTML = `
+                <div class="admin-item-info">
+                    <div class="admin-item-title">${escapeHtml(mem.title)}</div>
+                    <div class="admin-item-meta">${escapeHtml(mem.date)} ✦ ${escapeHtml(mem.location || '')}</div>
+                </div>
+                <div class="admin-item-actions">
+                    <button class="icon-btn" onclick="editMemory(${mem.id})" title="تعديل">✎</button>
+                    <button class="icon-btn danger" onclick="deleteMemory(${mem.id})" title="حذف">×</button>
+                </div>
+            `;
+            memList.appendChild(item);
+        });
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٨. تحرير المقالات
+   ══════════════════════════════════════════════════════════════ */
+let editingPostId = null;
+
+function openPostEditor() {
+    editingPostId = null;
+    document.getElementById('postEditorTitle').textContent = 'كتابة جديدة';
+    document.getElementById('postTitleInput').value = '';
+    document.getElementById('postCategoryInput').value = 'يوميات';
+    document.getElementById('postDateInput').value = new Date().toISOString().slice(0,10);
+    document.getElementById('postExcerptInput').value = '';
+    document.getElementById('postContentInput').value = '';
+    openModal('postEditorModal');
+}
+
+function editPost(id) {
+    const post = data.posts.find(p => p.id === id);
+    if (!post) return;
+    editingPostId = id;
+    document.getElementById('postEditorTitle').textContent = 'تعديل الكتابة';
+    document.getElementById('postTitleInput').value = post.title;
+    document.getElementById('postCategoryInput').value = post.category;
+    document.getElementById('postDateInput').value = post.date;
+    document.getElementById('postExcerptInput').value = post.excerpt;
+    document.getElementById('postContentInput').value = post.content;
+    closeModal('adminModal');
+    openModal('postEditorModal');
+}
+
+function savePost() {
+    const title = document.getElementById('postTitleInput').value.trim();
+    const category = document.getElementById('postCategoryInput').value;
+    const date = document.getElementById('postDateInput').value;
+    const excerpt = document.getElementById('postExcerptInput').value.trim();
+    const content = document.getElementById('postContentInput').value.trim();
+
+    if (!title || !content) {
+        showToast('العنوان والمحتوى مطلوبان', true);
+        return;
+    }
+
+    if (editingPostId) {
+        const post = data.posts.find(p => p.id === editingPostId);
+        Object.assign(post, { title, category, date, excerpt: excerpt || content.slice(0, 150)+'...', content });
+        showToast('حُفظت التعديلات ✦');
+    } else {
+        const newPost = {
+            id: Date.now(),
+            title, category, date,
+            excerpt: excerpt || content.slice(0, 150)+'...',
+            content
+        };
+        data.posts.unshift(newPost);
+        showToast('أُضيفت الكتابة الجديدة ✦');
+    }
+    saveData();
+    closeModal('postEditorModal');
+    renderAll();
+    if (data.adminMode) {
+        openModal('adminModal');
+        renderAdminLists();
+    }
+}
+
+function deletePost(id) {
+    if (!confirm('هل أنتَ متأكدٌ من حذف هذه الكتابة؟ لا يمكن التراجع.')) return;
+    data.posts = data.posts.filter(p => p.id !== id);
+    saveData();
+    renderAll();
+    if (data.adminMode) renderAdminLists();
+    showToast('حُذفت الكتابة');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ٩. تحرير الذكريات
+   ══════════════════════════════════════════════════════════════ */
+let editingMemoryId = null;
+let tempMemImage = null;
+
+function openMemoryEditor() {
+    editingMemoryId = null;
+    tempMemImage = null;
+    document.getElementById('memoryEditorTitle').textContent = 'ذكرى جديدة';
+    document.getElementById('memTitleInput').value = '';
+    document.getElementById('memDateInput').value = '';
+    document.getElementById('memLocationInput').value = '';
+    document.getElementById('memDescInput').value = '';
+    document.getElementById('memImgPreview').innerHTML = '<span>اضغط لاختيار صورة</span>';
+    openModal('memoryEditorModal');
+}
+
+function editMemory(id) {
+    const mem = data.memories.find(m => m.id === id);
+    if (!mem) return;
+    editingMemoryId = id;
+    tempMemImage = mem.image;
+    document.getElementById('memoryEditorTitle').textContent = 'تعديل الذكرى';
+    document.getElementById('memTitleInput').value = mem.title;
+    document.getElementById('memDateInput').value = mem.date;
+    document.getElementById('memLocationInput').value = mem.location || '';
+    document.getElementById('memDescInput').value = mem.description;
+    const preview = document.getElementById('memImgPreview');
+    preview.innerHTML = mem.image ? `<img src="${mem.image}">` : '<span>اضغط لاختيار صورة</span>';
+    closeModal('adminModal');
+    openModal('memoryEditorModal');
+}
+
+function saveMemory() {
+    const title = document.getElementById('memTitleInput').value.trim();
+    const date = document.getElementById('memDateInput').value.trim();
+    const location = document.getElementById('memLocationInput').value.trim();
+    const description = document.getElementById('memDescInput').value.trim();
+
+    if (!title || !description) {
+        showToast('العنوان والوصف مطلوبان', true);
+        return;
+    }
+
+    if (editingMemoryId) {
+        const mem = data.memories.find(m => m.id === editingMemoryId);
+        Object.assign(mem, { title, date, location, description, image: tempMemImage });
+        showToast('حُفظت الذكرى ✦');
+    } else {
+        data.memories.push({
+            id: Date.now(),
+            title, date, location, description, image: tempMemImage
+        });
+        showToast('أُضيفت ذكرى جديدة ✦');
+    }
+    saveData();
+    closeModal('memoryEditorModal');
+    renderAll();
+    if (data.adminMode) {
+        openModal('adminModal');
+        renderAdminLists();
+    }
+}
+
+function deleteMemory(id) {
+    if (!confirm('هل أنتَ متأكدٌ من حذف هذه الذكرى؟')) return;
+    data.memories = data.memories.filter(m => m.id !== id);
+    saveData();
+    renderAll();
+    if (data.adminMode) renderAdminLists();
+    showToast('حُذفت الذكرى');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٠. تحرير "من أنا" والإعدادات
+   ══════════════════════════════════════════════════════════════ */
+let tempAboutPortrait = null;
+
+function loadAboutForm() {
+    document.getElementById('aboutName').value = data.about.name;
+    document.getElementById('aboutGreeting').value = data.about.greeting;
+    document.getElementById('aboutBio').value = data.about.bio;
+    tempAboutPortrait = data.about.portrait;
+    const preview = document.getElementById('aboutImgPreview');
+    preview.innerHTML = data.about.portrait
+        ? `<img src="${data.about.portrait}">`
+        : '<span>اضغط لاختيار صورة</span>';
+}
+
+function saveAbout() {
+    data.about.name = document.getElementById('aboutName').value.trim() || 'كاتب الدفاتر';
+    data.about.greeting = document.getElementById('aboutGreeting').value.trim();
+    data.about.bio = document.getElementById('aboutBio').value.trim();
+    data.about.portrait = tempAboutPortrait;
+    saveData();
+    renderAbout();
+    showToast('حُفظت بياناتك ✦');
+}
+
+function loadSettingsForm() {
+    document.getElementById('settingQuoteText').value = data.quote.text;
+    document.getElementById('settingQuoteAuthor').value = data.quote.author;
+    document.getElementById('settingPassword').value = '';
+}
+
+function saveSettings() {
+    data.quote.text = document.getElementById('settingQuoteText').value.trim() || data.quote.text;
+    data.quote.author = document.getElementById('settingQuoteAuthor').value.trim() || data.quote.author;
+    const newPwd = document.getElementById('settingPassword').value.trim();
+    if (newPwd) data.password = newPwd;
+    saveData();
+    renderQuote();
+    showToast('حُفظت الإعدادات ✦');
+    document.getElementById('settingPassword').value = '';
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١١. معالجة الصور
+   ══════════════════════════════════════════════════════════════ */
+function handleImg(event, previewId) {
+    const file = event.target.files[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) {
+        showToast('حجم الصورة كبير (أقصى ٢ ميغا)', true);
+        return;
+    }
+    const reader = new FileReader();
+    reader.onload = e => {
+        const dataUrl = e.target.result;
+        document.getElementById(previewId).innerHTML = `<img src="${dataUrl}">`;
+        if (previewId === 'memImgPreview') tempMemImage = dataUrl;
+        else if (previewId === 'aboutImgPreview') tempAboutPortrait = dataUrl;
+    };
+    reader.readAsDataURL(file);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٢. تصدير/استيراد البيانات
+   ══════════════════════════════════════════════════════════════ */
+function exportData() {
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `dafater-backup-${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('تمَّ تصدير البيانات ✦');
+}
+
+function importData(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+        try {
+            const imported = JSON.parse(e.target.result);
+            if (!imported.posts || !imported.memories) throw new Error('ملف غير صالح');
+            if (!confirm('سيُستبدَل كلّ المحتوى الحالي بالملف المُستورَد. هل تريد المتابعة؟')) return;
+            data = Object.assign({}, DEFAULT_DATA, imported);
+            data.adminMode = true;
+            saveData();
+            renderAll();
+            renderAdminLists();
+            loadAboutForm();
+            loadSettingsForm();
+            showToast('تمَّ الاستيراد ✦');
+        } catch (err) {
+            showToast('ملف غير صالح', true);
+        }
+    };
+    reader.readAsText(file);
+}
+
+function resetData() {
+    if (!confirm('سيُحذَف كلُّ المحتوى ويعود الموقع لحالته الافتراضية. هل أنت متأكد تماماً؟')) return;
+    if (!confirm('تأكيد أخير: هل ترغب فعلاً في إعادة الضبط؟')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
+    saveData();
+    renderAll();
+    renderAdminLists();
+    loadAboutForm();
+    loadSettingsForm();
+    showToast('عاد كلُّ شيءٍ كما كان ✦');
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٣. أدوات مساعدة
+   ══════════════════════════════════════════════════════════════ */
+function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function openModal(id) {
+    document.getElementById(id).classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// إغلاق المودال عند النقر خارج المحتوى
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay) closeModal(overlay.id);
+    });
+});
+
+// زرّ Esc لإغلاق المودال
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
+    }
+    // اختصار فتح لوحة التحرير
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        openAdminLogin();
+    }
+});
+
+// تنبيه (Toast)
+let toastTimeout;
+function showToast(msg, isError = false) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show' + (isError ? ' error' : '');
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// قائمة الجوال
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('open');
+}
+
+// إغلاق قائمة الجوال عند الضغط على رابط
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('open');
+    });
+});
+
+// تأثير شريط التنقل عند التمرير
+window.addEventListener('scroll', () => {
+    document.querySelector('.nav-bar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// كشف العناصر عند التمرير
+let observer;
+function observeReveals() {
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ١٤. الإقلاع
+   ══════════════════════════════════════════════════════════════ */
+renderAll();
+observeReveals();
+</script>
+</body>
+</html>
